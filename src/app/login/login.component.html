@@ -3,6 +3,7 @@
     <span appChangeText >Welcome to {{title}}.</span>
  </div>
 <form #loginForm="ngForm" novalidate autocomplete="off">
+  <p>Git Hub learning</p>
  Username:<br>
   <input type="text" name="name12" [(ngModel)]="name1" only-alphabets #uname="ngModel" required>
   <app-error-display [displayError]="uname.invalid && uname.errors.required && (uname.dirty ||uname.touched || loginForm.submitted)"
