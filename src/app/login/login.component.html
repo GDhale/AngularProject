@@ -1,0 +1,52 @@
+<ngx-spinner></ngx-spinner>
+<div style = "text-align:center">
+    <span appChangeText >Welcome to {{title}}.</span>
+ </div>
+<form #loginForm="ngForm" novalidate autocomplete="off">
+ Username:<br>
+  <input type="text" name="name12" [(ngModel)]="name1" only-alphabets #uname="ngModel" required>
+  <app-error-display [displayError]="uname.invalid && uname.errors.required && (uname.dirty ||uname.touched || loginForm.submitted)"
+  errorMsg="plaese enter Username"></app-error-display><br>
+Password:<br>
+  <input type="password" name="Password" [(ngModel)]="paswd" #pword="ngModel" required>
+  <app-error-display [displayError]="pword.invalid && pword.errors.required && (pword.dirty ||pword.touched || loginForm.submitted)"
+  errorMsg="plaese enter Password"></app-error-display>
+  <br>
+  Email:<br>
+<input type="email" name="email" [(ngModel)]="email" #email1="ngModel" required pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+<app-error-display [displayError]="email1.invalid && email1.errors.required && (email1.dirty ||email1.touched || loginForm.submitted)"
+  errorMsg="plaese enter email"></app-error-display>
+  <app-error-display [displayError]="email1.invalid && email1.errors.pattern && (email1.dirty ||email1.touched || loginForm.submitted)"
+  errorMsg="plaese enter valid email"></app-error-display>
+  <br>
+  Mobile No:<br>
+  <input type="mobile no" name="mobile no" only-Numbers>
+<br><br><button type="submit" (click)="showSuccess()"> Login</button>
+</form> 
+
+<!-- <div *ngIf="!res"><img src='./assets/images/Spinner-1s-200px.gif'>
+</div>
+<div *ngIf="res">
+<input type="text" placeholder="search" [(ngModel)]="searchRecord">
+
+<button mat-raised-button>AngularMaterial</button> 
+<table  border='1'>
+  <tr>
+    <th>ID</th>
+    <th>name</th>
+    <th>email</th>
+  </tr>
+<tr *ngFor="let val of res| SearchData:searchRecord ">
+  <td>
+    {{val.id}}
+  </td>
+  <td>
+    {{val.name}}
+  </td>  
+  <td>
+      {{val.email}}
+    </td>  
+</tr>
+</table>
+</div>
+<h1 (click)="onClick()">{{storeval}}Hellooooooo</h1> -->
